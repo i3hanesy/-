@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Тестовое задание-Форма</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+      <div class="registration">
+        <button class="registration__button button" href="#"><span>Регистрация</span></button>
+      </div>
+    
+      <section class="form">
+
+        <div class="form__wrapper">
+          
+          <div class="wrapper">
+            <h1 class="form-title">Регистрация</h1>
+            <button type="reset" class="form__closed closed">Закрыть</button>
+          </div>
+
+          <form class="form__upload" method="post" enctype="multipart/form-data" autocomplete="off">
+            
+            <fieldset>
+              <label class="form__text-label" for="e-mail">E-mail
+                <input class="form__text-input" type="email" name="e-mail" id="e-mail" required>
+                <p class="error-massage visually-hidden">Введите E-mail</p>
+                <p class="error-massage visually-hidden">E-mail должен содержать символ "@"</p>
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <label class="form__text-label" for="user-name"><span>Никнейм</span>
+                <input class="form__text-input" type="text" name="user-name" id="user-name" minlength="3" maxlength="40" required>
+                <p class="error-massage visually-hidden">Введите Никнейм</p>
+                <p class="error-massage visually-hidden">Никнейм должен начинаться только с буквы</p>
+                <p class="error-massage visually-hidden">Никнейм дожен содержать минимум 3 символа</p>
+                <p class="error-massage visually-hidden">Никнейм должен содержать только буквы, цифры, cимволы (_) и (;)</p>
+
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <label class="form__text-label" for="password">Пароль
+                <input class="form__text-input" type="password" name="password" id="password" minlength="6" maxlength="32" required>
+                <ul class="form__validation validation-list">
+                  <h3 class="validation-list__title">Пароль должен содержать:</h3>
+                  <li class="validation-condition">
+                    <input type="checkbox" class="visually-hidden" name="validation" id="symbols-count" disabled checked>
+                    <label for="symbols-count">от 6 до 32 символов</label>  
+                  </li>
+                  <li class="validation-condition">
+                    <input type="checkbox" class="visually-hidden" name="validation" id="number" disabled checked>
+                    <label for="number">цифру</label>  
+                  </li>
+                  <li class="validation-condition">
+                    <input type="checkbox"  class="visually-hidden" name="validation" id="registor" disabled checked>
+                    <label for="registor">заглавную и строчную буквы</label>  
+                  </li>
+                  <li class="validation-condition">
+                    <p>Пароль не должен совпадать с Никнеймом</p>
+                  </li>              
+                </ul>
+              </label>
+              <label class="form__text-label" for="password-again">Пароль еще раз
+                <input class="form__text-input" type="password" name="password-again" id="password-again" minlength="6" maxlength="32" required>
+                <p class="error-massage visually-hidden">Введённые пароли не совпадают</p>
+              </label>
+            </fieldset>
+
+            <fieldset class="form__agreement">
+              <input class="visually-hidden" type="checkbox" name="agreement" id="agreement" required>
+              <label for="agreement">Я принимаю условия <a href="">Пользовательского соглашения</a></label>
+            </fieldset>
+
+            <button class="submit__button button" disabled>далее</button>
+
+            <!--вторая форма-->
+            <div class="form__next--wrapper">
+
+              <div class="form__next">
+                <fieldset class="form__next-gender">
+                  <h2>Ваш пол</h2>
+                  <ul>
+                    <li>
+                      <input class="visually-hidden" type="radio" name="gender" id="male" value="male">
+                      <label for="male">Мужской</label>
+                    </li>
+                    <li>
+                      <input class="visually-hidden" type="radio" name="gender" id="female" value="female">
+                      <label for="female">Женский</label>
+                    </li>
+                  </ul>
+                </fieldset>
+
+                <fieldset>
+                  <h2>Образование</h2>
+                  <select name="education">
+                    <option selected="" value="default">Выберете ваше образование</option>
+                    <option value="unfinished-secondary">незаконченное среднее</option>
+                    <option value="average">среднее</option>
+                    <option value="unfinished higher">незаконченное высшее</option>
+                    <option value="high">высшее</option>
+                    <option value="degree">ученая степень</option>
+                  </select>
+                </fieldset>              
+
+                <fieldset>
+                  <h2>О себе</h2>
+                  <textarea type="textarea" rows="" cols="" name=""></textarea>
+                </fieldset>
+
+                <fieldset class="form__next-rubric">
+                  <h2>Рубрики для подписки</h2>
+                  <ul>
+                    <li>
+                      <input class="visually-hidden" type="checkbox" name="politics" id="politics">
+                      <label for="politics">Политика</label>
+                    </li>
+
+                    <li>
+                      <input class="visually-hidden" type="checkbox" name="economy" id="economy">
+                      <label for="economy">Экономика</label>
+                    </li>
+
+                    <li>
+                      <input class="visually-hidden" type="checkbox" name="accident" id="accident">
+                      <label for="accident">Проиcшествия</label>
+                    </li>
+                    <li>
+                      <input class="visually-hidden" type="checkbox" name="sport" id="sport">
+                      <label for="sport">Спорт</label>
+                    </li>
+
+                    <li>
+                      <input class="visually-hidden" type="checkbox" name="weather" id="weather">
+                      <label for="weather">Погода</label>
+                    </li>
+                  </ul>
+                </fieldset>
+
+                <button type="submit" class="button">Зарегистрироваться</button>
+            </div>
+            </div>
+          </form>
+        </div>
+        
+    <script src="js/until.js"></script>
+    <script src="js/debounce.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/validation.js"></script>
+  </body>
+</html>
